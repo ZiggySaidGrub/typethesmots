@@ -69,6 +69,7 @@ let resetButton = document.getElementById("reset");
 resetButton.addEventListener("click",resetClicked);
 function resetClicked(){
     game.restart();
+    smotsField.focus();
 }
 
 function update(time){
