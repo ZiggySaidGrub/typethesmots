@@ -71,6 +71,12 @@ function resetClicked(){
     game.restart();
     smotsField.focus();
 }
+document.onkeydown = (e) => {
+    if (e.key == "Enter") {
+        resetClicked();
+    }
+};
+
 
 function update(time){
     game.update();
