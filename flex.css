@@ -1,0 +1,14 @@
+.flexr {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexc {
+    display: flex;
+    flex-direction: column;
+}
+
+.cm {
+    justify-content: center;
+    align-items: center;
+}

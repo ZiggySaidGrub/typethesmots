@@ -2,22 +2,62 @@
 <html>
     <head>
         <title>Type the smots!</title>
-        <link rel="icon" type="image/x-icon" href="smotsgaming.ico">
+        <link rel="icon" type="image/x-icon" href="assets/smotsgaming.ico">
+        <link rel="stylesheet" href="flex.css">
 
         <meta property="og:title" content="How fast can you type 'smots gaming'?" />
-        <meta property="og:image" content="https://type.smots.gay/preview.jpg" />
-        <meta property="og:url" content="https://type.smots.gay" />
+        <meta property="og:image" content="https://type.the.smots.gay/preview.jpg" />
+        <meta property="og:url" content="https://type.the.smots.gay" />
         <meta property="og:type" content="website" />
 
         <style>
+            @font-face {
+                font-family: renogare;
+                src: url(assets/renogare.ttf);
+            }
+            
+            :root {
+                --maincolor: #2f423c;
+                --secondcolor: #a9b0ad;
+                --font: monospace;
+            }
+
             body {
-                font-family: monospace;
-                color: #a9b0ad;
-                background-color: #2f423c;
+                font-family: var(--font);
+                color: var(--secondcolor);
+                background-color: var(--maincolor);
             }
             input {
-                font-family: monospace;
+                font-family: var(--font);
                 outline: none;
+                color: var(--secondcolor);
+                background-color: var(--maincolor);
+                box-shadow: none;
+                border: solid;
+            }
+
+            #styleoptions {
+                font-size: smaller;
+                margin-top: 50px;
+            }
+            .colorpicker {
+                background-color: transparent;
+                outline: none;
+                border: none;
+                position: relative;
+                top: 3.5px;
+            }
+            select {
+                background-color: var(--maincolor);
+                color: var(--secondcolor);
+                font-family: var(--font);
+                font-size: small;
+                position: relative;
+                height: 23px;
+                box-shadow: none;
+                top: 6px;
+                outline: none;
+                /*border: none;*/
             }
         </style>
     </head>
@@ -27,7 +67,27 @@
         <input type="button" id="reset" value="Reset Game">
         <p id="timer">Time:0.000</p>
         <p id="highScore">Highscore: no data 3:</p>
-
-        <script src="index.js"></script>
+        
+        <div class="flexc" id="styleoptions">
+            <div class="flexr">
+                <p>style options</p>
+            </div>
+            <div class="flexr" id="colorrow">
+                <p>main color:</p>
+                <input type="color" id="color1" value="#2f423c" class="colorpicker">
+                <p>secondary color:</p>
+                <input type="color" id="color2" value="#a9b0ad" class="colorpicker">
+            </div>
+            <div class="flexr">
+                <p>font:</p>
+                <select id="fonts" name="fonts">
+                    <option value="monospace">monospace</option>
+                    <option value="renogare">renogare</option>
+                </select>
+            </div>
+        </div>
+        
+        <script src="style.js"></script>
+        <script src="game.js"></script>
     </body>
 </html>
