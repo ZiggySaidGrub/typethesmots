@@ -9,6 +9,7 @@ if (localStorage.getItem("font") == null) {
 }
 document.getElementById("color1").value = localStorage.getItem("maincolor");
 document.getElementById("color2").value = localStorage.getItem("secondcolor");
+document.getElementById("fonts").value = localStorage.getItem("font");
 
 function updatestyle(){
     const root = document.documentElement;
@@ -18,17 +19,17 @@ function updatestyle(){
 
     if (root.style.getPropertyValue("--maincolor") != color1.value){
         localStorage.setItem("maincolor", color1.value)
+        root.style.setProperty("--maincolor", localStorage.getItem("maincolor"));
     }
     if (root.style.getPropertyValue("--secondcolor") != color2.value){
         localStorage.setItem("secondcolor", color2.value)
+        root.style.setProperty("--secondcolor", localStorage.getItem("secondcolor"));
     }
     if (root.style.getPropertyValue("--font") != font.value){
         localStorage.setItem("font", font.value)
+        root.style.setProperty("--font", localStorage.getItem("font"));
     }
 
-    root.style.setProperty("--maincolor", localStorage.getItem("maincolor"));
-    root.style.setProperty("--secondcolor", localStorage.getItem("secondcolor"));
-    root.style.setProperty("--font", localStorage.getItem("font"));
 
     window.requestAnimationFrame(updatestyle);
 }
