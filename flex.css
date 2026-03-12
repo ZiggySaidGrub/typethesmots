@@ -12,3 +12,8 @@
     justify-content: center;
     align-items: center;
 }
+
+.cl {
+    justify-content: left;
+    align-items: center;
+}
